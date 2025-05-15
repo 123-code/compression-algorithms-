@@ -37,7 +37,16 @@ int main() {
                 index = elements_in_array(sub_check_characters, search_buffer);
                 int offset = i - index - check_characters.size() + 1;
                 int length = check_characters.size();
-                std::cout << "<" << offset << ", " << length << ">" << std::endl;
+                std::string token = "<" + std::to_string(offset) + ", " + std::to_string(length) + ">";
+
+                if(token.size() > length){
+                    for( char c:check_characters){
+                        std::cout <<c;
+                    }
+                    std::cout << std::endl;
+                } else {
+                    std::cout << token << std::endl;
+                }
             } else {
                 std::cout << message[i] << std::endl;
             }
